@@ -1,0 +1,244 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;900&display=swap');
+
+*, *::after, *::before, html{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat';
+}
+
+:root{
+    --sea-green: rgb(59, 195, 190);
+    --yellow-green: rgb(241, 177, 69);
+    --bg-color: rgb(26, 42, 50);
+    --btn-color: rgb(32, 54, 64);
+    --light-color: rgb(169, 191, 201);
+    --lshadow-color: rgb(109, 138, 151);
+    --btnshadow-color: rgb(17, 33, 41);
+    --yellow-shadow: rgb(202, 140, 41);
+    --sgreen-shadow: rgb(35, 135, 135);
+}
+
+html, body{
+    background-color: var(--bg-color);
+    display: grid;
+    place-items: center;
+}
+
+body, html{
+    height: 100%;
+    width: 100%;
+}
+
+.main{
+    background-color: transparent;
+    width: fit-content;
+}
+
+/* PLAY GAME */
+.play_game{
+    display: none;
+}
+
+.game_board, .game_score{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.game_board .cells{
+    background-color: var(--btn-color);
+    width: 150px;
+    height: 150px;
+    border-radius: 15px;
+    box-shadow: 0px 10px var(--btnshadow-color);
+    font-size: 100px;
+    font-weight: 900;
+    text-align: center;
+    padding-top: 18px;
+}
+
+.game_board .o{
+    color: var(--yellow-green);
+}
+
+.game_board .x{
+    color: var(--sea-green);
+}
+
+.game_score{
+    margin-top: 30px;
+}
+
+.game_score button{
+    display: flex;
+    flex-direction: column;
+    border-radius: 15px;
+    height: 80px;
+    border: none;
+    color: var(--bg-color);
+    justify-content: center;
+    align-items: center;
+    font-weight: 600;
+    font-size: 18px;
+}
+
+.game_score button span:last-child{
+    font-size: 30px;
+    font-weight: 800;
+}
+
+.game_score button span strong{
+    font-weight: 600;
+}
+
+.game_score button:first-child{
+    background-color: var(--sea-green);
+}
+
+.game_score button:nth-child(2){
+    background-color: var(--light-color);
+}
+
+.game_score button:last-child{
+    background-color: var(--yellow-green);
+}
+
+.game_head {
+    display: flex;
+    width: 510px;
+    align-items: center;
+    justify-content: space-between;
+    height: 50px;
+    margin-bottom: 30px;
+}
+
+.game_head div:first-child{
+    font-size: 50px;
+    font-weight: 900;
+    letter-spacing: 10px;
+    color: var(--yellow-green);
+}
+
+.game_head div:first-child::first-letter{
+    color: var(--sea-green);
+}
+
+.game_head div:nth-child(2){
+    background-color: var(--btn-color);
+    padding: 15px 35px;
+    display: flex;
+    gap: 10px;
+    height: 50px;
+    align-items: center;
+    border-radius: 10px;
+    font-weight: 700;
+    color: var(--light-color);
+    box-shadow: 0px 5px var(--btnshadow-color);
+}
+
+.game_head div:nth-child(2) span{
+    font-size: 25px;
+    font-weight: 900;
+}
+
+.game_head div:nth-child(3){
+    background-color: var(--light-color);
+    height: 50px;
+    width: 50px;
+    border-radius: 10px;
+    display: grid;
+    place-items: center;
+    box-shadow: 0px 5px var(--lshadow-color);
+}
+
+.game_head div:nth-child(3) img{
+    height: auto;
+    width: 30px;
+}
+
+
+
+/* STARTUP PAGE */
+.start_game{
+    width: 510px;
+    display: none;
+}
+
+.start_game .select_box{
+    display: flex;
+    flex-direction: column;
+    border-radius: 15px;
+    width: 100%;
+    background-color: var(--btn-color);
+    color: var(--light-color);
+    font-weight: 600;
+    font-size: 20px;
+    text-align: center;
+    box-shadow: 0px 10px var(--btnshadow-color);
+    height: 230px;
+    padding: 30px;
+    margin-bottom: 50px;
+}
+
+.start_game .select_box div:last-child{
+    font-size: 17px;
+}
+
+.start_game .select_box div:nth-child(2){
+    position: relative;
+    width: 100%;
+    border-radius: 10px;
+    display: flex;
+    margin: auto;
+    height: 80px;
+    background-color: var(--bg-color);
+    overflow: hidden;
+}
+
+.start_game .select_box div:nth-child(2) div{
+    width: 50%;
+    font-size: 50px;
+    padding-top: 7px;
+    font-weight: 800;
+}
+
+#pick_x{
+    color: var(--bg-color);
+}
+
+#pick_o, #pick_x{
+    z-index: 10;
+}
+
+#pick_toggle{
+    background-color: transparent;
+    position: absolute;
+    height: 60px;
+    width: 215px;
+    top: 10px;
+    left: 10px;
+    background-color: var(--light-color);
+}
+
+.start_game button{
+    display: block;
+    width: 100%;
+    font-size: 22px;
+    font-weight: 600;
+    color: var(--bg-color);
+    border-radius: 15px;
+    padding: 20px;
+    border: none;
+}
+
+.start_game button#cpu{
+    background-color: var(--yellow-green);
+    box-shadow: 0px 10px var(--yellow-shadow);
+    margin-bottom: 30px;
+}
+
+.start_game button#player{
+    background-color: var(--sea-green);
+    box-shadow: 0px 10px var(--sgreen-shadow);
+}
