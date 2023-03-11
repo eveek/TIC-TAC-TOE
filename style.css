@@ -42,6 +42,7 @@ body, html{
 }
 
 /* PLAY GAME */
+
 .play_game{
     /* display: none; */
 }
@@ -58,8 +59,6 @@ body, html{
     height: 150px;
     border-radius: 15px;
     box-shadow: 0px 10px var(--btnshadow-color);
-    font-size: 100px;
-    font-weight: 900;
     display: grid;
     place-items: center;
     cursor: pointer;
@@ -120,17 +119,6 @@ body, html{
     margin-bottom: 30px;
 }
 
-.game_head div:first-child{
-    font-size: 50px;
-    font-weight: 900;
-    letter-spacing: 10px;
-    color: var(--yellow-green);
-}
-
-.game_head div:first-child::first-letter{
-    color: var(--sea-green);
-}
-
 .game_head div:nth-child(2){
     background-color: var(--btn-color);
     padding: 15px 35px;
@@ -144,12 +132,13 @@ body, html{
     box-shadow: 0px 5px var(--btnshadow-color);
 }
 
-.game_head div:nth-child(2) span{
-    font-size: 25px;
-    font-weight: 900;
+.game_head div:nth-child(2) span img{
+    height: auto;
+    width: 25px;
+    margin-bottom: -4px;
 }
 
-.game_head div:nth-child(3){
+.game_head button{
     background-color: var(--light-color);
     height: 50px;
     width: 50px;
@@ -157,11 +146,12 @@ body, html{
     display: grid;
     place-items: center;
     box-shadow: 0px 5px var(--lshadow-color);
+    border: none;
 }
 
-.game_head div:nth-child(3) img{
+.game_head button img{
     height: auto;
-    width: 30px;
+    width: 25px;
 }
 
 
@@ -183,7 +173,7 @@ body, html{
     font-size: 20px;
     text-align: center;
     box-shadow: 0px 10px var(--btnshadow-color);
-    height: 230px;
+    height: 220px;
     padding: 30px;
     margin-bottom: 50px;
 }
@@ -203,11 +193,27 @@ body, html{
     overflow: hidden;
 }
 
+#x_unckd, #o_ckd{
+    display: none;
+}
+
+#x_unckd, #x_ckd, #o_unckd, #o_ckd{
+    height: auto;
+    width: 40px;
+}
+
+.start_game .logo{
+    text-align: center;
+    margin-bottom: 20px;
+}
+
 .start_game .select_box div:nth-child(2) div{
     width: 50%;
     font-size: 50px;
-    padding-top: 7px;
     font-weight: 800;
+    display: grid;
+    place-items: center;
+    cursor: pointer;
 }
 
 #pick_x{
@@ -219,13 +225,13 @@ body, html{
 }
 
 #pick_toggle{
-    background-color: transparent;
     position: absolute;
     height: 60px;
     width: 215px;
     top: 10px;
     left: 10px;
     background-color: var(--light-color);
+    transition: left 500ms;
 }
 
 .start_game button{
@@ -253,14 +259,13 @@ body, html{
 /* END GAME */
 .end_game {
     position: fixed;
-    padding: 40px;
     background-color: var(--btn-color);
     width: 100%;
     height: 267px;
     text-align: center;
     display: grid;
     place-content: center;
-    z-index: 90;
+    z-index: 100;
     display: none;
 }
 
@@ -272,9 +277,7 @@ body, html{
 
 .end_game div:nth-child(2) span{
     margin-right: 20px;
-    font-size: 60px;
-    letter-spacing: 2px;
-    font-weight: 900;
+    display: flex;
 }
 
 .end_game div:nth-child(2){
@@ -282,8 +285,10 @@ body, html{
     font-size: 40px;
     font-weight: 700;
     display: flex;
-    justify-content: center;
+    width: fit-content;
+    justify-content:center;
     align-items: center;
+    margin: 10px 0px;
 }
 
 .end_game div:nth-child(3) button{
@@ -315,13 +320,13 @@ body, html{
     background-color: black;
     filter: opacity(0.5);
     z-index: 95;
-    /* display: none; */
+    display: none;
 }
 
 /* RELOAD GAME */
 .reload_game{
     position: fixed;
-    padding: 60px;
+    padding: 60px 0;
     background-color: var(--btn-color);
     width: 100%;
     height: 267px;
@@ -329,7 +334,7 @@ body, html{
     display: grid;
     place-items: center;
     z-index: 100;
-    /* display: none; */
+    display: none;
 }
 
 .reload_game div:first-child{

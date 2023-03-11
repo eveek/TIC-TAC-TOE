@@ -11,12 +11,19 @@
 <body>
     <div class="main">
         <div class="start_game">
+            <div class="logo"><img src="./assets/logo.svg" alt="logo"></div>
             <div class="select_box">
                 <div>PICK PLAYER 1'S MARK</div>
                 <div>
-                    <div id="pick_x">X</div>
+                    <div id="pick_x">
+                        <img src="./assets/icon-x-transparent.svg" alt="x_icon_checked" id="x_ckd">
+                        <img src="./assets/icon-x-gray.svg" alt="x_icon_unchecked" id="x_unckd">
+                    </div>
                     <div id="pick_toggle"></div>
-                    <div id="pick_o">O</div>
+                    <div id="pick_o">
+                        <img src="./assets/icon-o-dark.svg" alt="o_icon_checked" id="o_ckd">
+                        <img src="./assets/icon-o-gray.svg" alt="o_icon_unchecked" id="o_unckd">
+                    </div>
                 </div>
                 <div>REMEMBER: X GOES FIRST</div>
             </div>
@@ -25,20 +32,20 @@
         </div>
         <div class="play_game">
             <div class="game_head">
-                <div>XO</div>
-                <div><span>X</span> TURN</div>
-                <div><img src="./refresh.svg" style="fill: blue;" alt=""></div>
+                <div><img src="./assets/logo.svg" alt="logo"></div>
+                <div><span><img src="./assets/icon-x-gray.svg" alt=""></span> TURN</div>
+                <button><img src="./assets/icon-restart.svg" style="fill: blue;" alt=""></button>
             </div>
             <div class="game_board">
-                <div class="cells o" id="1">O</div>
-                <div class="cells" id="2"></div>
+                <div class="cells x" id="1"><img src="./assets/icon-x.svg" alt=""></div>
+                <div class="cells o" id="2"></div>
                 <div class="cells" id="3"></div>
-                <div class="cells x" id="4">X</div>
-                <div class="cells" id="5"></div>
+                <div class="cells" id="4"><img src="./assets/icon-x.svg" alt=""></div>
+                <div class="cells x" id="5"><img src="./assets/icon-o.svg" alt=""></div>
                 <div class="cells" id="6"></div>
-                <div class="cells" id="7"></div>
+                <div class="cells o" id="7"><img src="./assets/icon-x.svg" alt=""></div>
                 <div class="cells" id="8"></div>
-                <div class="cells" id="9"></div>
+                <div class="cells x" id="9"><img src="./assets/icon-o.svg" alt=""></div>
             </div>
             <div class="game_score">
                 <button><span>X <strong>(YOU)</strong></span><span>14</span></button>
@@ -49,7 +56,7 @@
     </div>
     <div class="end_game">
         <div>YOU WON!</div>
-        <div><span>X</span>TAKES THE ROUND</div>
+        <div><span><img src="./assets/icon-x.svg" alt=""></span>TAKES THE ROUND</div>
         <div>
             <button>QUIT</button>
             <button>NEXT ROUND</button>
