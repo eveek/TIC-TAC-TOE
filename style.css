@@ -34,7 +34,7 @@ body, html{
     width: 100%;
 }
 
-.main{
+main{
     background-color: transparent;
     width: fit-content;
     padding: 70px 20px;
@@ -44,7 +44,10 @@ body, html{
 /* PLAY GAME */
 
 .play_game{
-    /* display: none; */
+    display: none;
+    animation-name: show;
+    animation-duration: 1s;
+    animation-timing-function: ease-in-out;
 }
 
 .game_board, .game_score{
@@ -64,13 +67,30 @@ body, html{
     cursor: pointer;
 }
 
-.game_board .o{
-    color: var(--yellow-green);
+[field-state="x"]{
+    background-image: url(./assets/icon-x.svg);
+    background-repeat: no-repeat;
+    background-position: center;
 }
 
-.game_board .x{
-    color: var(--sea-green);
+[field-state="o"]{
+    background-image: url(./assets/icon-o.svg);
+    background-repeat: no-repeat;
+    background-position: center;
 }
+
+[set-hover="o"]:hover{
+    background-image: url(./assets/icon-o-outline.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+[set-hover="x"]:hover{
+    background-image: url(./assets/icon-x-outline.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
 
 .game_score{
     margin-top: 30px;
@@ -132,10 +152,23 @@ body, html{
     box-shadow: 0px 5px var(--btnshadow-color);
 }
 
-.game_head div:nth-child(2) span img{
-    height: auto;
+.game_head div:nth-child(2) span{
+    height: 25px;
     width: 25px;
-    margin-bottom: -4px;
+}
+
+.game_head div:nth-child(2) span[player_turn="x"]{
+    background-image: url(./assets/icon-x-gray.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100%;
+}
+
+.game_head div:nth-child(2) span[player_turn="o"]{
+    background-image: url(./assets/icon-o-gray.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100%;
 }
 
 .game_head button{
@@ -159,7 +192,10 @@ body, html{
 /* STARTUP PAGE */
 .start_game{
     width: 510px;
-    display: none;
+    /* display: none; */
+    animation-name: show;
+    animation-duration: 1s;
+    animation-timing-function: ease-in-out;
 }
 
 .start_game .select_box{
@@ -363,4 +399,10 @@ body, html{
 .reload_game div:nth-child(2) button:last-child {
     background-color: var(--yellow-green);
     box-shadow: 0px 5px var(--yellow-shadow);
+}
+
+/* KEYFRAMES */
+@keyframes show{
+    from{filter: opacity(0);}
+    to{filter: opacity(1);}
 }
