@@ -34,7 +34,7 @@
             <div class="game_head">
                 <div><img src="./assets/logo.svg" alt="logo"></div>
                 <div><span player_turn="x"></span> TURN</div>
-                <button><img src="./assets/icon-restart.svg" style="fill: blue;" alt=""></button>
+                <button id="refresh" class=""><img src="./assets/icon-restart.svg" style="fill: blue;" alt=""></button>
             </div>
             <div class="game_board">
                 <div class="cells" id="0" set-hover="" field-state="" role="button" ></div>
@@ -48,25 +48,25 @@
                 <div class="cells" id="8" set-hover="" field-state="" role="button" ></div>
             </div>
             <div class="game_score">
-                <button><span>X <strong>(YOU)</strong></span><span>0</span></button>
-                <button><span>TIES</span><span>0</span></button>
-                <button><span>O <strong>(CPU)</strong></span><span>0</span></button>
+                <div><span>X <strong>(YOU)</strong></span><span id="x_score">0</span></div>
+                <div><span>TIES</span><span id="tie_score">0</span></div>
+                <div><span>O <strong>(CPU)</strong></span><span id="o_score">0</span></div>
             </div>
         </section>
     </main>
     <section class="end_game">
         <div id="congrats">YOU WON!</div>
-        <div><span><img id="winner" src="./assets/icon-x.svg" alt=""></span>TAKES THE ROUND</div>
+        <div><span><img id="winner" src="./assets/icon-x.svg" alt=""></span><span id="winner_status">TAKES THE ROUND</span></div>
         <div>
-            <button>QUIT</button>
-            <button>NEXT ROUND</button>
+            <button id="quit">QUIT</button>
+            <button id="next_round">NEXT ROUND</button>
         </div>
     </section>
     <section class="reload_game">
         <div>RESTART GAME?</div>
         <div>
-            <button>NO, CANCEL</button>
-            <button>YES, RESTART</button>
+            <button id="cancel">NO, CANCEL</button>
+            <button id="restart">YES, RESTART</button>
         </div>
     </section>
     <div class="overlay_bg"></div>

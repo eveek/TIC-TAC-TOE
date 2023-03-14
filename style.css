@@ -110,7 +110,7 @@ main{
     margin-top: 30px;
 }
 
-.game_score button{
+.game_score div{
     display: flex;
     flex-direction: column;
     border-radius: 15px;
@@ -123,24 +123,24 @@ main{
     font-size: 18px;
 }
 
-.game_score button span:last-child{
+.game_score div span:last-child{
     font-size: 30px;
     font-weight: 800;
 }
 
-.game_score button span strong{
+.game_score div span strong{
     font-weight: 600;
 }
 
-.game_score button:first-child{
+.game_score div:first-child{
     background-color: var(--sea-green);
 }
 
-.game_score button:nth-child(2){
+.game_score div:nth-child(2){
     background-color: var(--light-color);
 }
 
-.game_score button:last-child{
+.game_score div:last-child{
     background-color: var(--yellow-green);
 }
 
@@ -199,6 +199,7 @@ main{
 .game_head button img{
     height: auto;
     width: 25px;
+    pointer-events: none;
 }
 
 
@@ -281,7 +282,7 @@ main{
     top: 10px;
     left: 10px;
     background-color: var(--light-color);
-    transition: left 500ms;
+    transition: left 300ms;
 }
 
 .start_game button{
@@ -317,6 +318,9 @@ main{
     place-content: center;
     z-index: 100;
     display: none;
+    animation-name: show;
+    animation-duration: 0.5s;
+    animation-timing-function: ease-in-out;
 }
 
 .end_game div:first-child{
@@ -325,7 +329,7 @@ main{
     font-size: 20px;
 }
 
-.end_game div:nth-child(2) span{
+.end_game div:nth-child(2) span:first-child{
     margin-right: 20px;
     display: flex;
 }
@@ -385,6 +389,9 @@ main{
     place-items: center;
     z-index: 100;
     display: none;
+    animation-name: show;
+    animation-duration: 0.5s;
+    animation-timing-function: ease-in-out;
 }
 
 .reload_game div:first-child{
@@ -413,6 +420,12 @@ main{
 .reload_game div:nth-child(2) button:last-child {
     background-color: var(--yellow-green);
     box-shadow: 0px 5px var(--yellow-shadow);
+}
+
+button.click{
+    transform: translateY(5px);
+    filter: brightness(1.1);
+    transition: 200ms;
 }
 
 /* KEYFRAMES */
