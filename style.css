@@ -91,6 +91,20 @@ main{
     background-position: center;
 }
 
+.game_board div.win_o {
+    background-color: var(--yellow-green);
+    background-image: url(./assets/icon-o-transparent.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.game_board div.win_x {
+    background-color: var(--sea-green);
+    background-image: url(./assets/icon-x-transparent.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
 
 .game_score{
     margin-top: 30px;

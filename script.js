@@ -11,7 +11,7 @@ class Player {
     }
 }
 let spaces = Array(9).fill(null);
-let currentPlayer;
+let currentPlayer; 
 
 const startGame = () => {
     initializaSection.style.display = "none";
@@ -35,7 +35,7 @@ const playerSelect = (() => {
     const _xUnckd = document.getElementById("x_unckd");
     const _oCkd = document.getElementById("o_ckd");
     const _oUnckd = document.getElementById("o_unckd");
-
+    let playerPick = "x"
 
     _pickO.onclick = () => {
         _playerCT.style.left = "225px";
@@ -94,7 +94,64 @@ const gameDisplay = () => {
         }
     }
 
-    return {setPlayerTurn, hoverPic}
+    const showWinner = (winningBlocks) => {
+        const winningMark = spaces[winningBlocks[1]];
+
+        // cells.forEach(cell => cell.removeEventListener("click", ))
+        winningBlocks.map( block => {
+            if (spaces[block] == "x"){
+                cells[block].classList.add("win_x");
+                console.log(cells[block])
+            } else {
+                cells[block].classList.add("win_o");
+                console.log(cells[block])
+            }
+        });
+
+        setTimeout(() => {
+            congratulateWinner(winningMark);
+        }, 500);
+    }
+
+    return {setPlayerTurn, hoverPic, showWinner}
+}
+
+    const congratulateWinner = (winningMark) => {
+        const congrats = document.getElementById("congrats");
+        const winner = document.getElementById("winner");
+        const endGameBox = document.querySelector(".end_game");
+        const overlay = document.querySelector(".overlay_bg");
+
+        congrats.textContent = "CONGRATULATIONS!";
+        winner.setAttribute("scr", `./assets/icon-${winningMark}.svg`);
+        endGameBox.style.display = "grid";
+        overlay.style.display = "block";
+    }
+
+const checkWinner = () => {
+    const _winningCombinations = [
+        [0, 1, 2],
+        [3, 4, 5],
+        [6, 7, 8],
+        [0, 3, 6],
+        [1, 4, 7],
+        [2, 5, 8],
+        [0, 4, 8], 
+        [2, 4, 6]
+    ]
+
+    const playerHasWon = () => {
+        for (const conmbination of _winningCombinations){
+            let [a, b, c] = conmbination;
+
+            if (spaces[a] && spaces[a] == spaces[b] && spaces[a] == spaces[c]){
+                return [a, b, c]
+            }
+        }
+        return false;
+    }
+
+return {playerHasWon}
 }
 
 const cellClick = (() => {
@@ -102,7 +159,7 @@ const cellClick = (() => {
         cell.addEventListener("click", e => {
             const id = e.target.id;
             const target = e.target;
-            console.log(id)
+            // console.log(id)
             if (!spaces[id]) {
                 spaces[id] = currentPlayer;
                 target.setAttribute("field-state", currentPlayer);
@@ -111,45 +168,10 @@ const cellClick = (() => {
                 gameDisplay().hoverPic(currentPlayer);
                 gameDisplay().setPlayerTurn(currentPlayer);
             }
+            if (checkWinner().playerHasWon() !== false){
+                let winningBlocks = checkWinner().playerHasWon();
+                gameDisplay().showWinner(winningBlocks);
+            }
         })
     })
 })();
-
-// const setGame = () => {
-    // const cells = document.querySelectorAll(".cells");
-
-
-//     const hoverPic = (pic) => {
-//         for (const cell of cells){
-//         const cellState = cell.getAttribute("field-state");
-
-//         if (cellState == ""){
-//             cell.setAttribute("set-hover", pic);
-//         } else {
-//             cell.setAttribute("set-hover", "");
-//         }
-//     }
-//     }
-
-//     const currentPlayer = playerSelect.playerChoice();
-
-//     return {setPlayerTurn, cells, hoverPic, currentPlayer}
-//     };
-// 
-
-// setGame().cells.forEach( cell => {
-//     let thePlayer = playerSelect.playerChoice();
-//     cell.addEventListener("click", e => {
-//         console.log(thePlayer)
-//         const target = e.target;
-//         target.setAttribute("field-state", thePlayer)
-//         setGame().hoverPic(thePlayer);
-
-//         if (thePlayer == "x"){
-//             thePlayer = "o";
-//         } else {
-//             thePlayer = "x";
-//         }
-        
-//     })
-// });
