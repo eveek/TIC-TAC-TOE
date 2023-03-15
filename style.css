@@ -35,7 +35,6 @@ main{
     background-color: transparent;
     width: fit-content;
     padding: 70px 20px;
-    /* height: 700px; */
 }
 
 /* PLAY GAME */
@@ -316,6 +315,7 @@ main{
     place-content: center;
     z-index: 100;
     display: none;
+    top: calc((100vh - 267px) / 2);
     animation-name: show;
     animation-duration: 0.5s;
     animation-timing-function: ease-in-out;
@@ -387,6 +387,7 @@ main{
     place-items: center;
     z-index: 100;
     display: none;
+    top: calc((100vh - 267px) / 2);
     animation-name: show;
     animation-duration: 0.5s;
     animation-timing-function: ease-in-out;
@@ -431,3 +432,12 @@ button.click{
     from{filter: opacity(0);}
     to{filter: opacity(1);}
 }
+
+
+/* MEDIA QUERIES */
+/* @media screen and (max-width: 550px) {
+    main{
+        height: auto;
+        width: 100vw;
+    }
+} */

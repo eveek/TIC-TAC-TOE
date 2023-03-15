@@ -7,6 +7,8 @@ const endGameBox = document.querySelector(".end_game");
 const xScoreBox = document.getElementById("x_score");
 const oScoreBox = document.getElementById("o_score");
 const tieScoreBox = document.getElementById("tie_score");
+const playerXbox = document.getElementById("player_x");
+const playerObox = document.getElementById("player_o");
 
 
 
@@ -35,6 +37,11 @@ const startGame = () => {
 
     const player1 = new Player(currentPlayer);
     const player2 = new Player(currentPlayer == "x"?"o":"x");
+
+    let playerX = player1.mark == "x" ? "(Player 1)" : "(Player 2)";
+    let playerO = playerX == "(Player 1)" ?  "(Player 2)" :  "(Player 1)";
+    playerXbox.textContent = playerX;
+    playerObox.textContent = playerO;
 
     return {player1, player2};
 }
