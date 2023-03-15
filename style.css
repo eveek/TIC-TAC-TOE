@@ -38,6 +38,7 @@ main{
     background-color: transparent;
     width: fit-content;
     padding: 70px 20px;
+    margin: auto;
     /* display: none; */
 }
 
@@ -424,7 +425,7 @@ main{
 
 button.click{
     transform: translateY(5px);
-    filter: brightness(1.1);
+    filter: brightness(0.9);
     transition: 200ms;
 }
 
@@ -432,4 +433,12 @@ button.click{
 @keyframes show{
     from{filter: opacity(0);}
     to{filter: opacity(1);}
+}
+
+
+/* MEDIA QUERIES  */
+@media screen and (max-width: 575px){
+    main{
+        /* transform: scale(0.5); */
+    }
 }

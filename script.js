@@ -83,11 +83,12 @@ const initialiseGame = (() => {
         setTimeout(() => {
             startGame();
             
-        }, 350);
+        }, 500);
     }
 
-    _playCpu.onclick = () => {
+    _playCpu.onclick = e => {
         // setGame(startGame.playerChoice(), "computer")
+        buttonTransition(e.target);
     }
 
 })();
@@ -219,7 +220,7 @@ const buttonFunc = () => {
         setTimeout(() => {
             overlay.style.display = "block";
             _reloadGameBox.style.display = "block";
-        }, 350);
+        }, 500);
     }
 
     const continueGame = e => {
@@ -227,7 +228,7 @@ const buttonFunc = () => {
         setTimeout(() => {
             overlay.style.display = "none";
             _reloadGameBox.style.display = "none";
-        }, 350);
+        }, 500);
     }
 
     const restartGame = e => {
@@ -237,7 +238,7 @@ const buttonFunc = () => {
             _reloadGameBox.style.display = "none";
             rebootGame();
             startGame();
-        }, 350);
+        }, 500);
     }
 
     const nextRound = e => {
@@ -253,7 +254,7 @@ const buttonFunc = () => {
             for (const cell of cells){
                 cell.className = "cells";
             }
-        }, 350);
+        }, 500);
     }
 
     const quitGame = e => {
@@ -264,7 +265,7 @@ const buttonFunc = () => {
             overlay.style.display = "none";
             initializaSection.style.display = "block";
             rebootGame()
-        }, 350);
+        }, 500);
     }
 
     return {refreshGame, continueGame, restartGame, nextRound, quitGame}
