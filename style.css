@@ -35,7 +35,7 @@ main{
     background-color: transparent;
     width: fit-content;
     padding: 70px 20px;
-    height: 700px;
+    /* height: 700px; */
 }
 
 /* PLAY GAME */
