@@ -31,17 +31,11 @@ button{
     cursor: pointer;
 }
 
-/* body, html{
-    
-} */
-
 main{
     background-color: transparent;
     width: fit-content;
     padding: 70px 20px;
-
-    /* margin: auto; */
-    /* display: none; */
+    height: 700px;
 }
 
 /* PLAY GAME */
@@ -210,6 +204,7 @@ main{
 /* STARTUP PAGE */
 .start_game{
     width: 510px;
+    height: 700px;
     /* display: none; */
     animation-name: show;
     animation-duration: 1s;
