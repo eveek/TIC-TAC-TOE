@@ -58,7 +58,7 @@ const playerSelect = (() => {
     let playerPick = "x"
 
     _pickO.onclick = () => {
-        _playerCT.style.left = "225px";
+        _playerCT.style.left = "50%";
         _oCkd.style.display = "block";
         _oUnckd.style.display = "none";
         _xCkd.style.display = "none";

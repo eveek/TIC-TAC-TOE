@@ -1,13 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;900&display=swap');
 
-*, *::after, *::before, html{
+*,
+*::after,
+*::before,
+html {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: 'Montserrat';
 }
 
-:root{
+:root {
     --sea-green: rgb(59, 195, 190);
     --yellow-green: rgb(241, 177, 69);
     --bg-color: rgb(26, 42, 50);
@@ -19,7 +22,8 @@
     --sgreen-shadow: rgb(35, 135, 135);
 }
 
-html, body{
+html,
+body {
     background-color: var(--bg-color);
     display: grid;
     place-items: center;
@@ -27,11 +31,11 @@ html, body{
     width: 100vw;
 }
 
-button{
+button {
     cursor: pointer;
 }
 
-main{
+main {
     background-color: transparent;
     width: fit-content;
     padding: 70px 20px;
@@ -39,20 +43,21 @@ main{
 
 /* PLAY GAME */
 
-.play_game{
+.play_game {
     display: none;
     animation-name: show;
     animation-duration: 1s;
     animation-timing-function: ease-in-out;
 }
 
-.game_board, .game_score{
+.game_board,
+.game_score {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 30px;
 }
 
-.game_board .cells{
+.game_board .cells {
     background-color: var(--btn-color);
     width: 150px;
     height: 150px;
@@ -63,25 +68,25 @@ main{
     cursor: pointer;
 }
 
-[field-state="x"]{
+[field-state="x"] {
     background-image: url(./assets/icon-x.svg);
     background-repeat: no-repeat;
     background-position: center;
 }
 
-[field-state="o"]{
+[field-state="o"] {
     background-image: url(./assets/icon-o.svg);
     background-repeat: no-repeat;
     background-position: center;
 }
 
-[set-hover="o"]:hover{
+[set-hover="o"]:hover {
     background-image: url(./assets/icon-o-outline.svg);
     background-repeat: no-repeat;
     background-position: center;
 }
 
-[set-hover="x"]:hover{
+[set-hover="x"]:hover {
     background-image: url(./assets/icon-x-outline.svg);
     background-repeat: no-repeat;
     background-position: center;
@@ -102,11 +107,12 @@ main{
 }
 
 
-.game_score{
+.game_score {
     margin-top: 30px;
+    width: 100%;
 }
 
-.game_score div{
+.game_score div {
     display: flex;
     flex-direction: column;
     border-radius: 15px;
@@ -119,24 +125,24 @@ main{
     font-size: 18px;
 }
 
-.game_score div span:last-child{
+.game_score div span:last-child {
     font-size: 30px;
     font-weight: 800;
 }
 
-.game_score div span strong{
+.game_score div span strong {
     font-weight: 600;
 }
 
-.game_score div:first-child{
+.game_score div:first-child {
     background-color: var(--sea-green);
 }
 
-.game_score div:nth-child(2){
+.game_score div:nth-child(2) {
     background-color: var(--light-color);
 }
 
-.game_score div:last-child{
+.game_score div:last-child {
     background-color: var(--yellow-green);
 }
 
@@ -149,7 +155,7 @@ main{
     margin-bottom: 30px;
 }
 
-.game_head div:nth-child(2){
+.game_head div:nth-child(2) {
     background-color: var(--btn-color);
     padding: 15px 35px;
     display: flex;
@@ -162,26 +168,26 @@ main{
     box-shadow: 0px 5px var(--btnshadow-color);
 }
 
-.game_head div:nth-child(2) span{
+.game_head div:nth-child(2) span {
     height: 25px;
     width: 25px;
 }
 
-.game_head div:nth-child(2) span[player_turn="x"]{
+.game_head div:nth-child(2) span[player_turn="x"] {
     background-image: url(./assets/icon-x-gray.svg);
     background-repeat: no-repeat;
     background-position: center;
     background-size: 100%;
 }
 
-.game_head div:nth-child(2) span[player_turn="o"]{
+.game_head div:nth-child(2) span[player_turn="o"] {
     background-image: url(./assets/icon-o-gray.svg);
     background-repeat: no-repeat;
     background-position: center;
     background-size: 100%;
 }
 
-.game_head button{
+.game_head button {
     background-color: var(--light-color);
     height: 50px;
     width: 50px;
@@ -192,16 +198,24 @@ main{
     border: none;
 }
 
-.game_head button img{
+.game_head button img {
     height: auto;
     width: 25px;
     pointer-events: none;
 }
 
+.game_head div:first-child {
+    height: 40px;
+    width: auto;
+}
+
+.game_head div:first-child img {
+    height: 100%;
+}
 
 
 /* STARTUP PAGE */
-.start_game{
+.start_game {
     width: 510px;
     height: 700px;
     /* display: none; */
@@ -210,7 +224,7 @@ main{
     animation-timing-function: ease-in-out;
 }
 
-.start_game .select_box{
+.start_game .select_box {
     display: flex;
     flex-direction: column;
     border-radius: 15px;
@@ -226,11 +240,11 @@ main{
     margin-bottom: 50px;
 }
 
-.start_game .select_box div:last-child{
+.start_game .select_box div:last-child {
     font-size: 17px;
 }
 
-.start_game .select_box div:nth-child(2){
+.start_game .select_box div:nth-child(2) {
     position: relative;
     width: 100%;
     border-radius: 10px;
@@ -241,21 +255,25 @@ main{
     overflow: hidden;
 }
 
-#x_unckd, #o_ckd{
+#x_unckd,
+#o_ckd {
     display: none;
 }
 
-#x_unckd, #x_ckd, #o_unckd, #o_ckd{
+#x_unckd,
+#x_ckd,
+#o_unckd,
+#o_ckd {
     height: auto;
     width: 40px;
 }
 
-.start_game .logo{
+.start_game .logo {
     text-align: center;
     margin-bottom: 20px;
 }
 
-.start_game .select_box div:nth-child(2) div{
+.start_game .select_box div:nth-child(2) div {
     width: 50%;
     font-size: 50px;
     font-weight: 800;
@@ -264,25 +282,31 @@ main{
     cursor: pointer;
 }
 
-#pick_x{
+#pick_x {
     color: var(--bg-color);
+    padding-left: 10px;
 }
 
-#pick_o, #pick_x{
+#pick_o {
+    padding-right: 10px;
+}
+
+#pick_o,
+#pick_x {
     z-index: 10;
 }
 
-#pick_toggle{
+#pick_toggle {
     position: absolute;
-    height: 60px;
-    width: 215px;
+    height: calc(100% - 20px);
+    width: calc(50% - 10px);
     top: 10px;
     left: 10px;
     background-color: var(--light-color);
     transition: left 300ms;
 }
 
-.start_game button{
+.start_game button {
     display: block;
     width: 100%;
     font-size: 22px;
@@ -293,13 +317,13 @@ main{
     border: none;
 }
 
-.start_game button#cpu{
+.start_game button#cpu {
     background-color: var(--yellow-green);
     box-shadow: 0px 10px var(--yellow-shadow);
     margin-bottom: 30px;
 }
 
-.start_game button#player{
+.start_game button#player {
     background-color: var(--sea-green);
     box-shadow: 0px 10px var(--sgreen-shadow);
 }
@@ -321,29 +345,29 @@ main{
     animation-timing-function: ease-in-out;
 }
 
-.end_game div:first-child{
+.end_game div:first-child {
     color: var(--light-color);
     font-weight: 700;
     font-size: 20px;
 }
 
-.end_game div:nth-child(2) span:first-child{
+.end_game div:nth-child(2) span:first-child {
     margin-right: 20px;
     display: flex;
 }
 
-.end_game div:nth-child(2){
+.end_game div:nth-child(2) {
     color: var(--sea-green);
     font-size: 40px;
     font-weight: 700;
     display: flex;
     width: fit-content;
-    justify-content:center;
+    justify-content: center;
     align-items: center;
     margin: 10px 0px;
 }
 
-.end_game div:nth-child(3) button{
+.end_game div:nth-child(3) button {
     color: var(--bg-color);
     padding: 15px;
     font-size: 20px;
@@ -353,17 +377,18 @@ main{
     margin-top: 10px;
 }
 
-.end_game div:nth-child(3) button:first-child{
+.end_game div:nth-child(3) button:first-child {
     background-color: var(--light-color);
     box-shadow: 0px 5px var(--lshadow-color);
     margin-right: 10px;
 }
-.end_game div:nth-child(3) button:last-child{
+
+.end_game div:nth-child(3) button:last-child {
     background-color: var(--yellow-green);
     box-shadow: 0px 5px var(--yellow-shadow);
 }
 
-.overlay_bg{
+.overlay_bg {
     position: fixed;
     top: 0;
     left: 0;
@@ -376,7 +401,7 @@ main{
 }
 
 /* RELOAD GAME */
-.reload_game{
+.reload_game {
     position: fixed;
     padding: 60px 0;
     background-color: var(--btn-color);
@@ -393,7 +418,7 @@ main{
     animation-timing-function: ease-in-out;
 }
 
-.reload_game div:first-child{
+.reload_game div:first-child {
     color: var(--light-color);
     font-size: 40px;
     font-weight: 700;
@@ -421,23 +446,175 @@ main{
     box-shadow: 0px 5px var(--yellow-shadow);
 }
 
-button.click{
+button.click {
     transform: translateY(5px);
     filter: brightness(0.9);
     transition: 200ms;
 }
 
 /* KEYFRAMES */
-@keyframes show{
-    from{filter: opacity(0);}
-    to{filter: opacity(1);}
+@keyframes show {
+    from {
+        filter: opacity(0);
+    }
+
+    to {
+        filter: opacity(1);
+    }
 }
 
 
 /* MEDIA QUERIES */
-/* @media screen and (max-width: 550px) {
-    main{
-        height: auto;
+@media screen and (max-width: 550px) {
+    main {
         width: 100vw;
     }
-} */
+
+    .game_head {
+        width: 100%;
+    }
+
+    .game_board,
+    .game_score {
+        gap: 5vw;
+    }
+
+    .game_score {
+        width: 100%;
+        margin-top: 5vw;
+    }
+
+    .game_score div {
+        font-size: 3.5vw;
+        height: fit-content;
+        padding: 3vw 0;
+        border-radius: 3vw;
+    }
+
+    .game_score div span:last-child {
+        font-size: 5vw;
+    }
+
+    .game_board .cells {
+        height: 27vw;
+        width: 27vw;
+        box-shadow: 0px 2vw var(--btnshadow-color);
+        border-radius: 3vw;
+    }
+
+    .game_head {
+        margin-bottom: 5vw;
+        height: 12vw;
+    }
+
+    .game_head button {
+        height: 100%;
+        width: 12vw;
+        border-radius: 3vw;
+        box-shadow: 0px 1vw var(--lshadow-color);
+    }
+
+    .game_head button img {
+        height: auto;
+        width: 6vw;
+    }
+
+    .game_head div:nth-child(2) {
+        font-size: 3vw;
+        padding: 1vw 5vw;
+        gap: 1vw;
+        height: 100%;
+        border-radius: 3vw;
+        box-shadow: 0px 1vw var(--btnshadow-color);
+    }
+
+    .game_head div:nth-child(2) span {
+        width: 5vw;
+        height: 5vw;
+    }
+
+    .game_head div:first-child {
+        height: 80%;
+        width: auto;
+    }
+
+    .reload_game,
+    .end_game {
+        padding: 10vw 0;
+        height: fit-content;
+        width: 100vw;
+    }
+
+    .reload_game div:first-child,
+    .end_game div:nth-child(2) {
+        font-size: 7vw;
+        margin-bottom: 2vw;
+    }
+
+    .end_game div:first-child {
+        font-size: 4vw;
+    }
+
+    .end_game div:nth-child(2) {
+        margin: 0;
+    }
+
+    .end_game div:nth-child(2) span:first-child {
+        height: auto;
+        width: 10vw;
+        margin-right: 4vw;
+    }
+
+    .end_game div:nth-child(2) span:first-child img {
+        height: auto;
+        width: 12vw;
+    }
+
+    .end_game div:nth-child(2) span :last-child {
+        margin-left: 0;
+    }
+
+    .reload_game div:last-child button,
+    .end_game div:last-child button {
+        font-size: 3.5vw;
+        padding: 3vw;
+        border-radius: 2vw;
+    }
+
+    .end_game div:last-child button:first-child {
+        box-shadow: 0px 1vw var(--lshadow-color);
+    }
+
+    .end_game div:last-child button:last-child {
+        box-shadow: 0px 1vw var(--yellow-shadow);
+    }
+
+    .start_game {
+        width: 100%;
+    }
+
+    .start_game .select_box {
+        font-size: 4vw;
+        height: 45vw;
+        padding: 5vw;
+        box-shadow: 0px 2vw var(--btnshadow-color);
+        gap: 2vw;
+    }
+
+    .start_game .select_box div:last-child {
+        font-size: 3vw;
+    }
+
+    .start_game button {
+        font-size: 5vw;
+        padding: 5vw;
+    }
+
+    .start_game button#cpu {
+        box-shadow: 0px 2vw var(--yellow-shadow)
+    }
+
+    .start_game button#player {
+        box-shadow: 0px 2vw var(--sgreen-shadow)
+    }
+}
